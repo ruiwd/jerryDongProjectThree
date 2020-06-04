@@ -1,0 +1,20 @@
+@import "_variables.scss";
+
+
+@mixin hawkText($fontSize) {
+  font-size: $fontSize * 1rem;
+  font-family: $hawkFont;
+  color: $hawkColor;
+} 
+
+@mixin doveText($fontSize) {
+  font-size: $fontSize * 1rem;
+  font-family: $doveFont;
+  color: $doveColor;
+}
+
+@mixin globalText($fontSize, $fontWeight) {
+  font-size: $fontSize * 1rem;
+  font-family: $globalFont;
+  font-weight: $fontWeight;
+}

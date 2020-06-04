@@ -8,8 +8,14 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-html {font-size: 62.5%}
+html {font-size: calc(5px + (10 - 5) * (100vw - 320px) / (1600 - 320))}
 body {font-size: 1.6rem;margin: 0}
 h1, h2, h3, h4, h5, h6, p, ul {margin: 0}
 ul {padding: 0; list-style-type: none}
 a {text-decoration: none;color: #000;display: inline-block}
+
+.wrapper {
+  max-width: 1400px;
+  width: 85%;
+  margin: 0 auto;
+}

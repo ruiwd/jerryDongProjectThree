@@ -1,0 +1,100 @@
+* {
+  border: 2px red solid;
+}
+
+body {
+  @include globalText(2, 300);
+  color: $fontColorD;
+  background-color: $bgColor;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+h1 {
+  @include globalText(6, 700);
+  color: $fontColorD;
+}
+
+h1.hawkText {
+  @include hawkText(10);
+}
+
+h1.doveText {
+  @include doveText(10);
+}
+
+h2 {
+  @include globalText(4, 700);
+  color: $fontColorD;
+}
+
+h2,
+h3 {
+  text-align: center;
+}
+
+ul.pointBreakdown,
+.mainTitle,
+.scoreboard,
+.choiceImage,
+.choiceButton {
+  display: flex;
+}
+
+.mainTitle {
+  justify-content: center;
+}
+
+.scoreboard {
+  justify-content: space-between;
+}
+
+ul.pointBreakdown,
+.choiceImage,
+.choiceButton {
+  justify-content: space-evenly;
+}
+
+.dove,
+.hawk {
+  width: 30%;
+  position: relative;
+}
+
+.textOverlay {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  opacity: 0;
+  transition: all .5s;
+}
+
+.textOverlay:hover {
+  opacity: 1;
+}
+
+.textOverlay p {
+  margin: 5rem;
+  text-align: center;
+  line-height: 4rem;
+  color: $fontColorL;
+}
+
+.matchSummary,
+.roundSummary {
+  display: none;
+}
+
+footer p {
+  text-align: center;
+  margin: 10px;
+}

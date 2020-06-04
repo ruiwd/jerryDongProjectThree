@@ -4,148 +4,172 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hawk vs Dove</title>
+  <script src='https://kit.fontawesome.com/30b04c8f55.js' crossorigin='anonymous'></script>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Merriweather:wght@300;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
 
   <header>
 
-    <div class="title">
-      <h1>Hawk vs Dove</h1>
-      <h2>Can you solve the prisoner's dilemma?</h2>
+    <div class="wrapper">
+
+      <div class="title">
+        
+        <div class="mainTitle">
+          <h1 class="hawkText">Hawk</h1>
+          <h1>vs</h1>
+          <h1 class="doveText">Dove</h1>
+        </div>
+  
+        <h2>Can you solve the prisoner's dilemma?</h2>
+      </div>
+  
+      <div class="manual">
+        <h3>Instructions</h3>
+        <ol class="instructions">
+          <li>Choose your strategy</li>
+          <li>Count your points</li>
+          <li>First to 5 points wins</li>
+        </ol>
+  
+        <h3>Point Breakdown</h3>
+        <ul class="pointBreakdown">
+          <li>
+            <p>Dove vs Dove</p>
+            <div class="points">
+              <p>+1</p>
+              <p>+1</p>
+            </div>
+          </li>
+          <li>
+            <p>Hawk vs Dove</p>
+            <div class="points">
+              <p>+1</p>
+              <p>0</p>
+          </li>
+          <li>
+            <p>Hawk vs Hawk</p>
+            <div class="points">
+              <p>+1 or -1</p>
+              <p>-1 or +1</p>
+          </li>
+        </ul>
+  
+      </div>
+  
     </div>
 
-    <div class="instructions">
-      <h3>Instructions</h3>
-      <ol>
-        <li>Choose your strategy</li>
-        <li>Count your points</li>
-        <li>First to 5 points wins</li>
-      </ol>
-
-      <h3>Point Breakdown</h3>
-      <ul>
-        <li>
-          <p>Dove vs Dove</p>
-          <div class="points">
-            <p>+1</p>
-            <p>+1</p>
-          </div>
-        </li>
-        <li>
-          <p>Hawk vs Dove</p>
-          <div class="points">
-            <p>+1</p>
-            <p>0</p>
-        </li>
-        <li>
-          <p>Hawk vs Hawk</p>
-          <div class="points">
-            <p>+1 or -1</p>
-            <p>-1 or +1</p>
-        </li>
-      </ul>
-    </div>
 
   </header>
 
 <main>
 
-  <section class="scoreboard">
+  <div class="wrapper">
 
-    <div class="user">
-      <h4 class="name"></h4>
-      <div class="score"></div>
-    </div>
-
-    <div class="computer">
-      <h4 class="name"></h4>
-      <div class="score"></div>
-    </div>
-
-  </section>
-
-  <section class="choices">
-
-    <div class="dove">
-
-      <img src="./assets/ferdinand-feng-5Ee6FBB-j3k-unsplash.jpg" alt="A dove flying through the sky">
-
-      <div class="textOverlay">
-        <p>Against another dove, you will share resources and gain 1 point. Against a hawk, you will flee and receive 0 points.</p>
+    <section class="scoreboard">
+  
+      <div class="user">
+        <h4 class="name">placeholder</h4>
+        <div class="score">0</div>
       </div>
-
-    </div>
-
-    <div class="vs">
-      <h2>vs</h2>
-    </div>
-
-    <div class="hawk">
-
-      <img src="./assets/martin-adams-fmCOUAj1QHk-unsplash.jpg" alt="A hawk flying through the sky">
-
-      <div class="textOverlay">
-        <p>Against a dove, you will win the resources and gain 1 point. Against a hawk, you could win the fight, gaining 1 point, or be injured, losing 1 point.</p>
+  
+      <div class="computer">
+        <h4 class="name">placeholder</h4>
+        <div class="score">0</div>
       </div>
-
-    </div>
+  
+    </section>
+  
+    <section class="choices">
+  
+      <div class="choiceImage">
+  
+        <div class="dove">
     
-    <div class="choiceButtons">
-
-      <button>Coo coo~ I'm a dove!</button>
-
-      <button>Screech~ I'm a hawk!</button>
-
+          <img src="./assets/ferdinand-feng-5Ee6FBB-j3k-unsplash.jpg" alt="A dove flying through the sky">
+    
+          <div class="textOverlay">
+            <p>Against another dove, you will share resources and gain 1 point. Against a hawk, you will flee and receive 0 points.</p>
+          </div>
+    
+        </div>
+    
+        <div class="vs">
+          <h2>vs</h2>
+        </div>
+    
+        <div class="hawk">
+    
+          <img src="./assets/martin-adams-fmCOUAj1QHk-unsplash.jpg" alt="A hawk flying through the sky">
+    
+          <div class="textOverlay">
+            <p>Against a dove, you will win the resources and gain 1 point. Against a hawk, you could win the fight, gaining 1 point, or be injured, losing 1 point.</p>
+          </div>
+    
+        </div>
+        
+      </div>
+  
+      
+      <div class="choiceButton">
+  
+        <button>Coo coo~ I'm a dove!</button>
+  
+        <button>Screech~ I'm a hawk!</button>
+  
+      </div>
+  
+    </section>
+  
+    <div class="roundSummary hawkText hawkHawkWin">
+  
+      <h5>Triumph in the skies!</h5>
+      <p>You won against another hawk.</p>
+  
     </div>
-
-  </section>
-
-  <div class="roundSummary hawkHawkWin">
-
-    <h5>Triumph in the skies!</h5>
-    <p>You won against another hawk.</p>
-
-  </div>
-
-  <div class="roundSummary hawkHawkLoss">
-
-    <h5>Crash and burn!</h5>
-    <p>You lost against another hawk.</p>
-
-  </div>
-
-  <div class="roundSummary hawkDoveWin">
-
-    <h5>Flawless victory!</h5>
-    <p>You chased off a pesky dove.</p>
-
-  </div>
-
-  <div class="roundSummary hawkDoveLoss">
-
-    <h5>That was a close one!</h5>
-    <p>You managed to flee from a hawk.</p>
-
-  </div>
-
-  <div class="roundSummary doveDove">
-
-    <h5>We believe in peace!</h5>
-    <p>You shared resources with another dove.</p>
-
-  </div>
-
-  <div class="matchSummary win">
-
-    <h5>Congratulations!</h5>
-    <p>You win this match.</p>
-
-  </div>
-
-  <div class="matchSummary loss">
-
-    <h5>Game over!</h5>
-    <p>You lost this match.</p>
+  
+    <div class="roundSummary hawkText hawkHawkLoss">
+  
+      <h5>Crash and burn!</h5>
+      <p>You lost against another hawk.</p>
+  
+    </div>
+  
+    <div class="roundSummary hawkText hawkDoveWin">
+  
+      <h5>Flawless victory!</h5>
+      <p>You chased off a pesky dove.</p>
+  
+    </div>
+  
+    <div class="roundSummary doveText hawkDoveLoss">
+  
+      <h5>That was a close one!</h5>
+      <p>You managed to flee from a hawk.</p>
+  
+    </div>
+  
+    <div class="roundSummary doveText doveDove">
+  
+      <h5>We believe in peace!</h5>
+      <p>You shared resources with another dove.</p>
+  
+    </div>
+  
+    <div class="matchSummary win">
+  
+      <h5>Congratulations!</h5>
+      <p>You win this match.</p>
+  
+    </div>
+  
+    <div class="matchSummary loss">
+  
+      <h5>Game over!</h5>
+      <p>You lost this match.</p>
+  
+    </div>
 
   </div>
 
