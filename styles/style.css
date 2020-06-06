@@ -275,6 +275,8 @@ body {
   font-weight: 300;
   color: #4D4D4D;
   background-color: #E0FFFF;
+  padding-bottom: 50px;
+  position: relative;
 }
 
 img {
@@ -287,16 +289,17 @@ h1 {
   font-family: "Merriweather", serif;
   font-weight: 700;
   color: #4D4D4D;
+  margin: 10px;
 }
 
-h1.hawkText {
-  font-size: 10rem;
+.hawkText {
+  font-size: 9.5rem;
   font-family: "Permanent Marker", cursive;
   color: #8B0000;
 }
 
-h1.doveText {
-  font-size: 10rem;
+.doveText {
+  font-size: 12rem;
   font-family: "Allura", cursive;
   color: #00BFFF;
 }
@@ -306,6 +309,7 @@ h2 {
   font-family: "Merriweather", serif;
   font-weight: 700;
   color: #4D4D4D;
+  margin: 10px;
 }
 
 h2,
@@ -313,7 +317,8 @@ h3 {
   text-align: center;
 }
 
-ul.pointBreakdown,
+.manual,
+.pointBreakdown ul,
 .mainTitle,
 .scoreboard,
 .choiceImage,
@@ -323,24 +328,54 @@ ul.pointBreakdown,
   display: flex;
 }
 
+.instructions {
+  width: 30%;
+}
+
+.pointBreakdown {
+  width: 60%;
+}
+
 .mainTitle {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .scoreboard {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 20px 0px;
+  font-size: 3rem;
 }
 
-ul.pointBreakdown,
+.scoreboard .user,
+.scoreboard .computer {
+  width: 30%;
+  padding: 10px;
+  background-color: #4D4D4D;
+  color: #D3D3D3;
+  text-align: center;
+}
+
+.scoreboard .score {
+  font-size: 4rem;
+}
+
+.manual,
+.pointBreakdown ul,
 .choiceImage,
 .choiceButton {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .dove,
@@ -370,8 +405,11 @@ ul.pointBreakdown,
   transition: all .5s;
 }
 
-.textOverlay:hover {
+.textOverlay:hover,
+.choiceImage img:focus + .textOverlay,
+.choiceImage img:focus-withinwithin + .textOverlay {
   opacity: 1;
+  cursor: help;
 }
 
 .textOverlay p {
@@ -381,12 +419,115 @@ ul.pointBreakdown,
   color: #D3D3D3;
 }
 
-.matchSummary,
-.roundSummary {
+.matchSummary {
+  font-size: 10rem;
+  color: #D3D3D3;
+}
+
+.modal {
+  position: fixed;
   display: none;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  text-align: center;
+  padding: 20rem 5rem;
+}
+
+.modal p,
+.modal span {
+  font-size: 4rem;
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  color: #D3D3D3;
+  margin: 10px 0px;
+}
+
+.modal span {
+  padding: 10px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.modal.doveText span:hover,
+.modal.doveText span:focus,
+.modal.doveText span:focus-within {
+  color: #00BFFF;
+  cursor: pointer;
+}
+
+.modal.hawkText span:hover,
+.modal.hawkText span:focus,
+.modal.hawkText span:focus-within {
+  color: #8B0000;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+form {
+  margin: 20px auto;
+}
+
+form input#hawk {
+  margin-left: 30px;
+}
+
+form button {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 25px auto;
+  width: 50%;
+  border: none;
+  background-color: #4D4D4D;
+  color: #D3D3D3;
+  font-weight: 700;
+  padding: 10px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+form label {
+  font-size: 2.5rem;
+}
+
+form button:hover {
+  color: #E0FFFF;
+}
+
+form label:hover,
+form input:hover,
+form button:hover {
+  cursor: pointer;
+}
+
+form button:active,
+form button:focus,
+form button:focus-withinwithin {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+}
+
+footer {
+  padding: 10px;
+  background-color: #4D4D4D;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 
 footer p {
   text-align: center;
-  margin: 10px;
+  color: #D3D3D3;
+  font-weight: 700;
 }

@@ -6,6 +6,8 @@ body {
   @include globalText(2, 300);
   color: $fontColorD;
   background-color: $bgColor;
+  padding-bottom: 50px;
+  position: relative;
 }
 
 img {
@@ -16,19 +18,21 @@ img {
 h1 {
   @include globalText(6, 700);
   color: $fontColorD;
+  margin: 10px;
 }
 
-h1.hawkText {
-  @include hawkText(10);
+.hawkText {
+  @include hawkText(9.5);
 }
 
-h1.doveText {
-  @include doveText(10);
+.doveText {
+  @include doveText(12);
 }
 
 h2 {
   @include globalText(4, 700);
   color: $fontColorD;
+  margin: 10px;
 }
 
 h2,
@@ -36,7 +40,8 @@ h3 {
   text-align: center;
 }
 
-ul.pointBreakdown,
+.manual,
+.pointBreakdown ul,
 .mainTitle,
 .scoreboard,
 .choiceImage,
@@ -44,18 +49,44 @@ ul.pointBreakdown,
   display: flex;
 }
 
+.instructions {
+  width: 30%;
+}
+
+.pointBreakdown {
+  width: 60%;
+}
+
 .mainTitle {
   justify-content: center;
+  align-items: center;
 }
 
 .scoreboard {
   justify-content: space-between;
+  margin: 20px 0px;
+  font-size: 3rem;
 }
 
-ul.pointBreakdown,
+.scoreboard .user,
+.scoreboard .computer {
+  width: 30%;
+  padding: 10px;
+  background-color: $fontColorD;
+  color: $fontColorL;
+  text-align: center;
+}
+
+.scoreboard .score {
+  font-size: 4rem;
+}
+
+.manual,
+.pointBreakdown ul,
 .choiceImage,
 .choiceButton {
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .dove,
@@ -78,8 +109,11 @@ ul.pointBreakdown,
   transition: all .5s;
 }
 
-.textOverlay:hover {
+.textOverlay:hover,
+.choiceImage img:focus + .textOverlay,
+.choiceImage img:focus-withinwithin + .textOverlay {
   opacity: 1;
+  cursor: help;
 }
 
 .textOverlay p {
@@ -89,12 +123,109 @@ ul.pointBreakdown,
   color: $fontColorL;
 }
 
-.matchSummary,
-.roundSummary {
+.matchSummary {
+  font-size: 10rem;
+  color: $fontColorL;
+}
+
+.modal {
+  position: fixed;
   display: none;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  transition: all 0.5s;
+  text-align: center;
+  padding: 20rem 5rem;
+}
+
+.modal p,
+.modal span {
+  @include globalText(4, 300);
+  color: $fontColorL;
+  margin: 10px 0px;
+}
+
+.modal span {
+  padding: 10px;
+  transition: all 0.4s;
+}
+
+.modal.doveText span:hover,
+.modal.doveText span:focus,
+.modal.doveText span:focus-within {
+  color: $doveColor;
+  cursor: pointer;
+}
+
+.modal.hawkText span:hover,
+.modal.hawkText span:focus,
+.modal.hawkText span:focus-within {
+  color: $hawkColor;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+form {
+  margin: 20px auto;
+}
+
+form input#hawk {
+  margin-left: 30px;
+}
+
+form button {
+  font-family: inherit;
+  font-size: inherit;
+  display: block;
+  margin: 25px auto;
+  width: 50%;
+  border: none;
+  background-color: $fontColorD;
+  color: $fontColorL;
+  font-weight: 700;
+  padding: 10px;
+  transition: all 0.4s;
+}
+
+form label {
+  font-size: 2.5rem;
+}
+
+form button:hover {
+  color: $bgColor;
+}
+
+form label:hover,
+form input:hover,
+form button:hover {
+  cursor: pointer;
+}
+
+form button:active,
+form button:focus,
+form button:focus-withinwithin {
+  filter: brightness(0.7);
+}
+
+footer {
+  padding: 10px;
+  background-color: $fontColorD;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 
 footer p {
   text-align: center;
-  margin: 10px;
+  color: $fontColorL;
+  font-weight: 700;
 }
