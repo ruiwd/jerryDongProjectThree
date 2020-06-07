@@ -45,8 +45,14 @@
     }
 
     game.closeModal = (choices) => {
-      $(`.modal span`).on(`click`, function() {
+      $(`.modal span`).on(`click`, () => {
         $(choices).removeClass(`show`);
+      })
+    }
+
+    game.replay = () => {
+      $(`.matchSummary .replay`).on(`click`, () => {
+        location.reload(true);
       })
     }
 
@@ -65,11 +71,11 @@
           
           game.point(1, 1);
 
-          const choices = `.doveDove`
+          const summary = `.doveDove`
           
-          $(choices).addClass(`show`);
+          $(summary).addClass(`show`);
 
-          game.closeModal(choices);
+          game.closeModal(summary);
 
         } 
         
@@ -77,11 +83,11 @@
 
           game.point(0, 1);
 
-          const choices = `.hawkDoveLoss`
+          const summary = `.hawkDoveLoss`
           
-          $(choices).addClass(`show`);
+          $(summary).addClass(`show`);
 
-          game.closeModal(choices);
+          game.closeModal(summary);
 
         } 
         
@@ -89,11 +95,11 @@
           
           game.point(1, 0);
 
-          const choices = `.hawkDoveWin`
+          const summary = `.hawkDoveWin`
           
-          $(choices).addClass(`show`);
+          $(summary).addClass(`show`);
 
-          game.closeModal(choices);
+          game.closeModal(summary);
 
         } 
         
@@ -104,11 +110,11 @@
             
             game.point(1, -1);
 
-            const choices = `.hawkHawkWin`
+            const summary = `.hawkHawkWin`
             
-            $(choices).addClass(`show`);
+            $(summary).addClass(`show`);
   
-            game.closeModal(choices);
+            game.closeModal(summary);
 
           }
 
@@ -116,13 +122,35 @@
             
             game.point(-1, 1);
 
-            const choices = `.hawkHawkLoss`
+            const summary = `.hawkHawkLoss`
             
-            $(choices).addClass(`show`);
+            $(summary).addClass(`show`);
   
-            game.closeModal(choices);
+            game.closeModal(summary);
 
           }
+        }
+
+        if (game.userScore == 5) {
+
+          console.log(`YOU WON`)
+
+          const summary = `.matchSummary.win`
+          
+          $(summary).addClass(`show`);
+
+          game.replay();
+
+        } else if (game.computerScore == 5) {
+
+          console.log(`YOU LOST`)
+
+          const summary = `.matchSummary.loss`
+          
+          $(summary).addClass(`show`);
+
+          game.replay();
+
         }
 
       })
