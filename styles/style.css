@@ -271,8 +271,9 @@ body {
   font-weight: 300;
   color: #4D4D4D;
   background-color: #E0FFFF;
-  padding-bottom: 50px;
+  padding-bottom: 7rem;
   position: relative;
+  min-height: 100vh;
 }
 
 img {
@@ -313,13 +314,26 @@ h3 {
   text-align: center;
 }
 
+h4 {
+  margin: 1rem auto;
+}
+
+.mainTitle {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .manual,
 .pointBreakdown ul,
 .points,
 .mainTitle,
 .scoreboard,
 .choiceImage,
-.choiceButton {
+.chooseBird {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -352,15 +366,6 @@ h3 {
   padding: 0 0 1rem 0;
 }
 
-.mainTitle {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .scoreboard {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -369,10 +374,16 @@ h3 {
   font-size: 3rem;
 }
 
+.scoreboard p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
 .scoreboard .user,
 .scoreboard .computer {
-  width: 30%;
-  padding: 10px;
+  width: 35%;
+  padding: 1.5rem;
   background-color: #4D4D4D;
   color: #D3D3D3;
   text-align: center;
@@ -384,7 +395,7 @@ h3 {
 }
 
 .manual {
-  margin-top: 30px;
+  margin-top: 3rem;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
@@ -392,7 +403,6 @@ h3 {
 }
 
 .pointBreakdown ul,
-.choiceImage,
 .choiceButton {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -402,15 +412,19 @@ h3 {
           align-items: center;
 }
 
+.choiceImage,
 .points {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .dove,
 .hawk {
-  width: 30%;
+  width: 35%;
   position: relative;
 }
 
@@ -449,9 +463,50 @@ h3 {
   color: #D3D3D3;
 }
 
-.matchSummary {
-  font-size: 10rem;
+form {
+  margin: 5rem auto;
+  font-size: 3rem;
+}
+
+.chooseBird {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.chooseHawk {
+  margin-left: 5rem;
+}
+
+form button {
+  font-family: inherit;
+  display: block;
+  margin: 5rem auto;
+  width: 50%;
+  border: none;
+  background-color: #4D4D4D;
   color: #D3D3D3;
+  font-weight: 700;
+  padding: 10px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+form button:hover {
+  color: #E0FFFF;
+}
+
+form label:hover,
+form input:hover,
+form button:hover {
+  cursor: pointer;
+}
+
+form button:active,
+form button:focus,
+form button:focus-within {
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
 }
 
 .modal {
@@ -466,7 +521,7 @@ h3 {
   -webkit-transition: all .4s;
   transition: all .4s;
   text-align: center;
-  padding: 30rem 5rem;
+  padding: 35vh 7vw;
 }
 
 .modal p,
@@ -476,6 +531,7 @@ h3 {
   font-weight: 300;
   color: #D3D3D3;
   margin: 10px 0px;
+  line-height: 6rem;
 }
 
 .modal span {
@@ -497,6 +553,11 @@ h3 {
 .modal.hawkText span:focus-within {
   color: #8B0000;
   cursor: pointer;
+}
+
+.matchSummary {
+  font-size: 10rem;
+  color: #D3D3D3;
 }
 
 .matchSummary p {
@@ -536,48 +597,24 @@ h3 {
   top: 0%;
 }
 
-form {
-  margin: 5rem auto;
+.theory {
+  padding: 5rem 0;
 }
 
-form input#hawk {
-  margin-left: 3rem;
+.theory p,
+.theory blockquote {
+  margin: 4rem auto 0 auto;
+  font-size: 2rem;
+  line-height: 4rem;
 }
 
-form button {
-  font-family: inherit;
-  font-size: inherit;
-  display: block;
-  margin: 5rem auto;
-  width: 50%;
-  border: none;
-  background-color: #4D4D4D;
-  color: #D3D3D3;
-  font-weight: 700;
-  padding: 10px;
-  -webkit-transition: all 0.4s;
-  transition: all 0.4s;
+.theory p {
+  width: 80%;
 }
 
-form label {
-  font-size: 2.5rem;
-}
-
-form button:hover {
-  color: #E0FFFF;
-}
-
-form label:hover,
-form input:hover,
-form button:hover {
-  cursor: pointer;
-}
-
-form button:active,
-form button:focus,
-form button:focus-within {
-  -webkit-filter: brightness(0.7);
-          filter: brightness(0.7);
+.theory blockquote {
+  width: 65%;
+  font-style: italic;
 }
 
 footer {
@@ -592,4 +629,144 @@ footer p {
   text-align: center;
   color: #D3D3D3;
   font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .scoreboard .user,
+  .scoreboard .computer {
+    width: 40%;
+  }
+  .choiceImage .dove,
+  .choiceImage .hawk {
+    width: 40%;
+  }
+}
+
+@media (max-width: 750px) {
+  .hawkText {
+    font-size: 8rem;
+  }
+  .doveText {
+    font-size: 10rem;
+  }
+  h1 {
+    font-size: 5rem;
+    margin: 1rem 1rem 0rem 1rem;
+  }
+  h2 {
+    margin-top: 0px;
+    font-size: 3rem;
+  }
+  .manual {
+    display: block;
+  }
+  .manual .instructions {
+    width: 100%;
+    border: none;
+  }
+  .manual .instructions ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding-left: 0;
+  }
+  .manual .instructions ol li {
+    margin-left: 3.5rem;
+  }
+  .manual .pointBreakdown {
+    width: 100%;
+    border-top: 2px solid #4D4D4D;
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+  .manual .pointBreakdown .points {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  .manual .pointBreakdown .points p {
+    margin-right: 1.5rem;
+  }
+  .manual .pointBreakdown ul {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .scoreboard {
+    display: block;
+  }
+  .scoreboard .user,
+  .scoreboard .computer {
+    width: 100%;
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .scoreboard .user p,
+  .scoreboard .computer p {
+    text-align: left;
+  }
+  .scoreboard .user {
+    border-bottom: 2px solid #E0FFFF;
+  }
+  .choices .choiceImage .textOverlay {
+    display: none;
+  }
+  .choices .choiceButton form {
+    width: 100%;
+    margin: 3rem 0rem;
+  }
+  .choices .choiceButton form input {
+    margin: 2rem 1rem 2rem 0rem;
+  }
+  .choices .choiceButton form button {
+    margin: 3rem auto;
+  }
+  .choices .choiceButton form .chooseBird {
+    display: block;
+  }
+  .choices .choiceButton form .chooseBird .chooseDove {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .choices .choiceButton form .chooseBird .chooseDove label {
+    margin-left: 1rem;
+  }
+  .choices .choiceButton form .chooseBird .chooseHawk {
+    text-align: center;
+    margin: 0px;
+  }
+  .theory {
+    padding-top: 2rem;
+  }
+  .theory p {
+    width: 100%;
+  }
+  .theory blockquote {
+    width: 85%;
+  }
+  .modal {
+    padding-top: 30vh;
+  }
 }

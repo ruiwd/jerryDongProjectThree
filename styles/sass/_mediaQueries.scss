@@ -1,0 +1,155 @@
+@media (max-width: 1000px) {
+  
+  .scoreboard {
+    .user,
+    .computer {
+      width: 40%;
+    }
+  }
+  
+  .choiceImage {
+    .dove,
+    .hawk {
+      width: 40%;
+    }
+  }
+}
+
+@media (max-width: 750px) {
+
+  .hawkText {
+    font-size: 8rem;
+  }
+  
+  .doveText {
+    font-size: 10rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    margin: 1rem 1rem 0rem 1rem;
+  }
+
+  h2 {
+    margin-top: 0px;
+    font-size: 3rem;
+  }
+
+  .manual {
+    display: block;
+
+    .instructions {
+      width: 100%;
+      border: none;
+      
+      ol {
+        display: flex;
+        justify-content: space-evenly;
+        padding-left: 0;
+
+        li {
+          margin-left: 3.5rem;
+        }
+      }
+    }
+
+    .pointBreakdown {
+      width: 100%;
+      border-top: 2px solid $fontColorD;
+      padding-left: 5rem;
+      padding-right: 5rem;
+
+      .points {
+        justify-content: space-evenly;
+
+        p {
+          margin-right: 1.5rem;
+        }
+      }
+
+      ul {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .scoreboard {
+    display: block;
+
+    .user,
+    .computer {
+      width: 100%;
+      margin: 0px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        text-align: left;
+      }
+    }
+
+    .user {
+      border-bottom: 2px solid $bgColor;
+    }
+  }
+
+  .choices {
+    .choiceImage {
+      .textOverlay {
+        display: none;
+      }
+    }
+
+    .choiceButton {
+      form {
+        width: 100%;
+        margin: 3rem 0rem;
+        
+        input {
+          margin: 2rem 1rem 2rem 0rem;
+        }
+
+        button {
+          margin: 3rem auto;
+        }
+
+        .chooseBird {
+          display: block;
+
+          .chooseDove {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center;
+
+            label {
+              margin-left: 1rem;
+            }
+          }
+
+          .chooseHawk {
+            text-align: center;
+            margin: 0px;
+          }
+        }
+      }
+    }
+  }
+
+  .theory {
+    padding-top: 2rem;
+
+    p {
+      width: 100%;
+    }
+
+    blockquote {
+      width: 85%;
+    }
+  }
+
+  .modal {
+    padding-top: 30vh;
+  }
+}

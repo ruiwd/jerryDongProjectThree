@@ -60,8 +60,8 @@
             <li>
               <p>Hawk vs Hawk</p>
               <div class="points">
-                <p>+- 1</p>
-                <p>-+ 1</p>
+                <p>&plusmn; 1</p>
+                <p>&plusmn; 1</p>
             </li>
           </ul>
 
@@ -70,7 +70,6 @@
       </div>
 
     </div>
-
 
   </header>
 
@@ -81,12 +80,18 @@
     <section class="scoreboard">
   
       <div class="user">
-        <h4 class="name">xXxWingBeakxXx</h4>
+        <div class="player">
+          <p>(You)</p>
+          <h4 class="name">xXxWingBeakxXx</h4>
+        </div>
         <div class="score">0</div>
       </div>
   
       <div class="computer">
-        <h4 class="name">Birbotron9000</h4>
+        <div class="player">
+          <p>(CPU)</p>
+          <h4 class="name">Birbotron9000</h4>
+        </div>
         <div class="score">0</div>
       </div>
   
@@ -115,7 +120,7 @@
           <img src="./assets/martin-adams-fmCOUAj1QHk-unsplash.jpg" alt="A hawk flying through the sky">
     
           <div class="textOverlay">
-            <p>Against a dove, you will win the resources and gain 1 point. Against a hawk, you could win the fight, gaining 1 point, or be injured, losing 1 point.</p>
+            <p>Against a dove, you win the resources and gain 1 point. Against a hawk, you could win the fight, gaining 1 point, or be injured, losing 1 point.</p>
           </div>
     
         </div>
@@ -125,13 +130,20 @@
       
       <div class="choiceButton">
   
-        <form class="chooseBird">
+        <form>
 
-          <label for="dove">Coo coo~ I'm a dove!</label>
-          <input type="radio" id="dove" value="dove" name="birdChoice" required></input>
+          <div class="chooseBird">
+            <div class="chooseDove">
+              <label for="dove">Coo coo~ I'm a dove!</label>
+              <input type="radio" id="dove" value="dove" name="birdChoice" required></input>
+            </div>
+  
+            <div class="chooseHawk">
+              <input type="radio" id="hawk" value="hawk" name="birdChoice"></input>
+              <label for="hawk">Screech~ I'm a hawk!</label>
+            </div>
+          </div>
 
-          <input type="radio" id="hawk" value="hawk" name="birdChoice"></input>
-          <label for="hawk">Screech~ I'm a hawk!</label>
 
           <button>FITE ME!</button>
 
@@ -141,6 +153,20 @@
   
     </section>
   
+    <section class="theory">
+
+      <h2>What is the "prisoner's dilemma"?</h2>
+
+      <p>The Oxford English Dictionary describes the "prisoner's dilemma" as:</p>
+
+      <blockquote>
+        "A situation in which two players each have two options whose outcome depends crucially on the simultaneous choice made by the other, often formulated in terms of two prisoners separately deciding whether to confess to a crime.""
+      </blockquote>
+
+      <p>The "Hawk vs Dove" scenario is a subset of this theory. By choosing a "dove" strategy, you minimize your losses, but also lower potential gains, by sharing a limited resource. Meanwhile, a "hawk" strategy is a greater gamble in that while you beat out "doves" at gaining the resource, you risk injury when faced with another "hawk."</p>
+
+    </section>
+
     <div class="roundSummary hawkText hawkHawkWin modal">
   
       <h5>Triumph in the skies!</h5>
@@ -159,7 +185,7 @@
   
     <div class="roundSummary hawkText hawkDoveWin modal">
   
-      <h5>Flawless victory!</h5>
+      <h5>Flawless conquest!</h5>
       <p>You chased off a pesky dove.</p>
       <span>&times;</span>
   
@@ -183,7 +209,7 @@
   
     <div class="matchSummary win modal">
   
-      <h5>Congratulations!</h5>
+      <h5>Victory!</h5>
       <p>You win this match.</p>
       <p class="replay"><i class="fas fa-redo-alt"></i>Play again</p>
   

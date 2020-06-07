@@ -48,24 +48,22 @@
       $(`.modal span`).on(`click`, () => {
         $(choices).removeClass(`show`);
       })
-    }
+    };
 
     game.replay = () => {
       $(`.matchSummary .replay`).on(`click`, () => {
         location.reload(true);
       })
-    }
+    };
 
     game.fight = () => {
     
-      $(`form.chooseBird`).on(`submit`, (e) => {
+      $(`form`).on(`submit`, (e) => {
         e.preventDefault();
 
         game.computerChoice();
-        const userBirdChoice = $(`form input:checked`).val();
 
-        console.log(userBirdChoice);
-        console.log(computerBirdChoice);
+        const userBirdChoice = $(`form input:checked`).val();
 
         if (userBirdChoice == `dove` && computerBirdChoice == `dove`) {
           
@@ -152,6 +150,8 @@
           game.replay();
 
         }
+
+        $('input[type="radio"]').prop('checked', false);
 
       })
 
