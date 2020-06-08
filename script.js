@@ -137,8 +137,6 @@
 
         if (game.userScore == 5) {
 
-          console.log(`YOU WON`)
-
           const summary = `.matchSummary.win`
           
           $(summary).addClass(`show`);
@@ -146,8 +144,6 @@
           game.replay();
 
         } else if (game.computerScore == 5) {
-
-          console.log(`YOU LOST`)
 
           const summary = `.matchSummary.loss`
           
