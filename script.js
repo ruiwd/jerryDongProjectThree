@@ -22,6 +22,12 @@
     game.userScore = 0;
     game.computerScore = 0;
 
+    game.playerName = () => {
+      if (game.userName !== null) {
+        $(`.user h4.name`).html(game.userName);
+      }
+    }
+
     game.computerChoice = () => {
 
       const randomChoice = Math.ceil(Math.random()*2);
@@ -158,7 +164,7 @@
     }
 
     game.init = () => {
-      $(`.user h4.name`).html(game.userName);
+      game.playerName(); 
       game.fight();
     }
 
